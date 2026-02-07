@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Web Developer</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Google -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      * {
+        font-family: "Inter", sans-serif;
+      }
+      .section-title {
+        position: relative;
+        display: inline-block;
+      }
+      .section-title:after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 50%;
+        height: 3px;
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        border-radius: 2px;
+      }
+      .skill-card:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+      }
+      .project-card {
+        transition: all 0.3s ease;
+      }
+      .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .mobile-menu {
+        transition: all 0.3s ease;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <div class="text-2xl font-bold text-indigo-600">Portfolio</div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a href="#home" class="font-medium hover:text-indigo-600">Home</a>
+            <a href="#about" class="font-medium hover:text-indigo-600">About</a>
+            <a href="#skills" class="font-medium hover:text-indigo-600"
+              >Skills</a
+            >
+            <a href="#projects" class="font-medium hover:text-indigo-600"
+              >Projects</a
+            >
+            <a href="#experience" class="font-medium hover:text-indigo-600"
+              >Experience</a
+            >
+            <a href="#education" class="font-medium hover:text-indigo-600"
+              >Education</a
+            >
+            <a href="#contact" class="font-medium hover:text-indigo-600"
+              >Contact</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="menuBtn" class="md:hidden text-gray-600">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div
+          id="mobileMenu"
+          class="mobile-menu hidden md:hidden bg-white py-4 border-t"
+        >
+          <div class="flex flex-col space-y-4">
+            <a href="#home" class="font-medium hover:text-indigo-600 py-2"
+              >Home</a
+            >
+            <a href="#about" class="font-medium hover:text-indigo-600 py-2"
+              >About</a
+            >
+            <a href="#skills" class="font-medium hover:text-indigo-600 py-2"
+              >Skills</a
+            >
+            <a href="#projects" class="font-medium hover:text-indigo-600 py-2"
+              >Projects</a
+            >
+            <a href="#experience" class="font-medium hover:text-indigo-600 py-2"
+              >Experience</a
+            >
+            <a href="#education" class="font-medium hover:text-indigo-600 py-2"
+              >Education</a
+            >
+            <a href="#contact" class="font-medium hover:text-indigo-600 py-2"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="pt-24 pb-16 bg-gradient-to-r from-blue-50 to-indigo-50"
+    >
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+              Halo, Saya <span class="text-indigo-600">Web Developer</span>
+            </h1>
+            <p class="text-lg text-gray-600 mb-6">
+              Membangun solusi digital dengan teknologi PHP, Laravel, dan
+              CodeIgniter. Berpengalaman dalam mengembangkan sistem informasi
+              untuk berbagai kebutuhan bisnis.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#projects"
+                class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-6 rounded-lg shadow-md transition duration-300"
+                >Lihat Projek</a
+              >
+              <a
+                href="#contact"
+                class="bg-white hover:bg-gray-100 text-indigo-600 font-medium py-3 px-6 rounded-lg border border-indigo-600 transition duration-300"
+                >Hubungi Saya</a
+              >
+            </div>
+          </div>
+          <div class="md:w-1/2 flex justify-center">
+            <div class="relative">
+              <div
+                class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full shadow-xl"
+              ></div>
+              <div
+                class="absolute -bottom-2 -right-2 bg-white p-4 rounded-lg shadow-lg"
+              >
+                <div class="text-3xl font-bold text-indigo-600">3+</div>
+                <div class="text-gray-600">Tahun Pengalaman</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 section-title">About Me</h2>
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0">
+            <p class="text-lg text-gray-700 mb-6">
+              Saya adalah seorang Web Developer dengan spesialisasi dalam
+              pengembangan aplikasi web menggunakan PHP, Laravel, dan
+              CodeIgniter. Memiliki pengalaman dalam membangun sistem informasi
+              untuk rumah sakit, perusahaan, dan institusi.
+            </p>
+            <p class="text-lg text-gray-700 mb-6">
+              Saya fokus pada pembuatan solusi yang efisien, skalabel, dan mudah
+              digunakan. Selalu mengikuti perkembangan teknologi terbaru dan
+              menerapkan best practices dalam setiap proyek.
+            </p>
+            <div class="flex items-center space-x-4">
+              <div class="flex items-center">
+                <i class="fas fa-map-marker-alt text-indigo-600 mr-2"></i>
+                <span>Indonesia</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-briefcase text-indigo-600 mr-2"></i>
+                <span>Available for Freelance</span>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2 md:pl-12">
+            <h3 class="text-2xl font-bold mb-6">Tech Stack</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <div class="bg-blue-50 p-4 rounded-lg text-center">
+                <i class="fab fa-php text-3xl text-blue-600 mb-2"></i>
+                <div class="font-medium">PHP</div>
+              </div>
+              <div class="bg-red-50 p-4 rounded-lg text-center">
+                <i class="fas fa-fire text-3xl text-red-600 mb-2"></i>
+                <div class="font-medium">CodeIgniter</div>
+              </div>
+              <div class="bg-red-100 p-4 rounded-lg text-center">
+                <i class="fab fa-laravel text-3xl text-red-500 mb-2"></i>
+                <div class="font-medium">Laravel</div>
+              </div>
+              <div class="bg-blue-100 p-4 rounded-lg text-center">
+                <i class="fas fa-database text-3xl text-blue-500 mb-2"></i>
+                <div class="font-medium">MySQL</div>
+              </div>
+              <div class="bg-purple-50 p-4 rounded-lg text-center">
+                <i class="fab fa-js-square text-3xl text-yellow-500 mb-2"></i>
+                <div class="font-medium">JavaScript</div>
+              </div>
+              <div class="bg-blue-50 p-4 rounded-lg text-center">
+                <i class="fab fa-bootstrap text-3xl text-purple-600 mb-2"></i>
+                <div class="font-medium">Bootstrap</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 section-title">
+          Skills & Technologies
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Backend Skills -->
+          <div class="skill-card bg-white p-6 rounded-xl shadow-md">
+            <div class="flex items-center mb-4">
+              <div class="bg-indigo-100 p-3 rounded-lg mr-4">
+                <i class="fas fa-server text-indigo-600 text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold">Backend Development</h3>
+            </div>
+            <ul class="space-y-3">
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                <span>PHP (Native & Framework)</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                <span>CodeIgniter 3 (CRUD, Modular)</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                <span>Laravel (Eloquent, Blade, Auth)</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                <span>MySQL Database Design</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                <span>RESTful API Development</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Frontend Skills -->
+          <div class="skill-card bg-white p-6 rounded-xl shadow-md">
+            <div class="flex items-center mb-4">
+              <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                <i class="fas fa-code text-blue-600 text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold">Frontend & UI/UX</h3>
+            </div>
+            <ul class="space-y-3">
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                <span>HTML5, CSS3, JavaScript (ES6+)</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                <span>Bootstrap 5 (Responsive Design)</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                <span>AdminLTE Dashboard Template</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                <span>AJAX for Dynamic Content</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                <span>Responsive Mobile Design</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Additional Skills -->
+          <div class="skill-card bg-white p-6 rounded-xl shadow-md">
+            <div class="flex items-center mb-4">
+              <div class="bg-green-100 p-3 rounded-lg mr-4">
+                <i class="fas fa-tools text-green-600 text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold">Tools & Others</h3>
+            </div>
+            <ul class="space-y-3">
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                <span>Git Version Control</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                <span>XAMPP/Laragon Development</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                <span>Postman API Testing</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                <span>System Analysis & Design</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                <span>Problem Solving & Debugging</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 section-title">Projects</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div
+            class="project-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center"
+            >
+              <i class="fas fa-hospital text-white text-6xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">
+                Sistem Pengajuan Cuti Rumah Sakit
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Sistem digital untuk mengelola pengajuan cuti karyawan rumah
+                sakit dengan fitur approval multi-level dan tracking status.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                  >PHP</span
+                >
+                <span
+                  class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full"
+                  >CodeIgniter 3</span
+                >
+                <span
+                  class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full"
+                  >Bootstrap</span
+                >
+                <span
+                  class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full"
+                  >MySQL</span
+                >
+              </div>
+              <div class="flex justify-between">
+                <span class="text-sm text-gray-500"
+                  ><i class="far fa-calendar-alt mr-1"></i> 2023</span
+                >
+                <span class="text-sm text-gray-500"
+                  ><i class="fas fa-users mr-1"></i> Rumah Sakit</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div
+            class="project-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-green-500 to-teal-600 flex items-center justify-center"
+            >
+              <i class="fas fa-archive text-white text-6xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Sistem Arsip Surat Digital</h3>
+              <p class="text-gray-600 mb-4">
+                Aplikasi arsip surat masuk dan keluar dengan fitur pencarian,
+                klasifikasi, dan pelaporan untuk organisasi.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full"
+                  >Laravel</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                  >PHP</span
+                >
+                <span
+                  class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full"
+                  >Bootstrap</span
+                >
+                <span
+                  class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full"
+                  >MySQL</span
+                >
+              </div>
+              <div class="flex justify-between">
+                <span class="text-sm text-gray-500"
+                  ><i class="far fa-calendar-alt mr-1"></i> 2022</span
+                >
+                <span class="text-sm text-gray-500"
+                  ><i class="fas fa-users mr-1"></i> Perusahaan</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="project-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center"
+            >
+              <i class="fas fa-landmark text-white text-6xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Website Museum & Event</h3>
+              <p class="text-gray-600 mb-4">
+                Website informasi museum dengan sistem booking kunjungan, galeri
+                virtual, dan manajemen event online.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full"
+                  >CodeIgniter 3</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                  >PHP</span
+                >
+                <span
+                  class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full"
+                  >JavaScript</span
+                >
+                <span
+                  class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full"
+                  >MySQL</span
+                >
+              </div>
+              <div class="flex justify-between">
+                <span class="text-sm text-gray-500"
+                  ><i class="far fa-calendar-alt mr-1"></i> 2022</span
+                >
+                <span class="text-sm text-gray-500"
+                  ><i class="fas fa-users mr-1"></i> Museum</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 section-title">Experience</h2>
+
+        <div class="relative">
+          <!-- Timeline line -->
+          <div
+            class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-indigo-500 to-purple-600"
+          ></div>
+
+          <!-- Experience 1 -->
+          <div class="flex flex-col md:flex-row mb-12">
+            <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
+              <div class="bg-white p-6 rounded-xl shadow-md">
+                <h3 class="text-xl font-bold text-indigo-600">Staff IT</h3>
+                <p class="text-gray-600 font-medium mb-2">Rumah Sakit</p>
+                <p class="text-gray-500 mb-4">2021 - Sekarang</p>
+                <ul class="text-gray-700 space-y-2">
+                  <li>
+                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                    Mengembangkan sistem internal rumah sakit
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                    Maintenance website dan aplikasi
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                    Troubleshooting jaringan dan perangkat
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="hidden md:flex md:w-1/2 items-center justify-center">
+              <div
+                class="bg-indigo-600 text-white rounded-full w-12 h-12 flex items-center justify-center"
+              >
+                <i class="fas fa-briefcase"></i>
+              </div>
+            </div>
+            <div class="md:w-1/2 md:pl-12 md:hidden">
+              <!-- Empty for mobile -->
+            </div>
+          </div>
+
+          <!-- Experience 2 -->
+          <div class="flex flex-col md:flex-row mb-12">
+            <div class="md:w-1/2 md:pr-12 md:hidden">
+              <!-- Empty for mobile -->
+            </div>
+            <div class="hidden md:flex md:w-1/2 items-center justify-center">
+              <div
+                class="bg-purple-600 text-white rounded-full w-12 h-12 flex items-center justify-center"
+              >
+                <i class="fas fa-laptop-code"></i>
+              </div>
+            </div>
+            <div class="md:w-1/2 md:pl-12">
+              <div class="bg-white p-6 rounded-xl shadow-md">
+                <h3 class="text-xl font-bold text-indigo-600">
+                  Freelance Web Developer
+                </h3>
+                <p class="text-gray-600 font-medium mb-2">Proyek Independen</p>
+                <p class="text-gray-500 mb-4">2020 - Sekarang</p>
+                <ul class="text-gray-700 space-y-2">
+                  <li>
+                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                    Membangun website dan sistem untuk klien
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                    Mengembangkan aplikasi custom sesuai kebutuhan
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                    Maintenance dan update sistem yang ada
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Course Section -->
+    <section id="education" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 section-title">
+          Education & Course
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Education -->
+          <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+            <h3 class="text-xl font-bold mb-6 text-indigo-600">Education</h3>
+            <div class="space-y-6">
+              <div class="border-l-4 border-indigo-500 pl-4">
+                <h4 class="font-bold">Sarjana Komputer (S.Kom)</h4>
+                <p class="text-gray-600">Universitas Teknologi Digital</p>
+                <p class="text-gray-500 text-sm">2017 - 2021</p>
+              </div>
+              <div class="border-l-4 border-blue-500 pl-4">
+                <h4 class="font-bold">SMA Negeri 1 Kota</h4>
+                <p class="text-gray-600">Jurusan IPA</p>
+                <p class="text-gray-500 text-sm">2014 - 2017</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course & Certification -->
+          <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+            <h3 class="text-xl font-bold mb-6 text-indigo-600">
+              Course & Certification
+            </h3>
+            <div class="space-y-6">
+              <div class="border-l-4 border-green-500 pl-4">
+                <h4 class="font-bold">Web Development Bootcamp</h4>
+                <p class="text-gray-600">Online Course - Platform Edukasi</p>
+                <p class="text-gray-500 text-sm">2020</p>
+              </div>
+              <div class="border-l-4 border-purple-500 pl-4">
+                <h4 class="font-bold">Laravel Masterclass</h4>
+                <p class="text-gray-600">Online Course - Platform Edukasi</p>
+                <p class="text-gray-500 text-sm">2021</p>
+              </div>
+              <div class="border-l-4 border-yellow-500 pl-4">
+                <h4 class="font-bold">Database Design & Optimization</h4>
+                <p class="text-gray-600">Workshop - Komunitas Developer</p>
+                <p class="text-gray-500 text-sm">2022</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="py-16 bg-gradient-to-r from-blue-50 to-indigo-50"
+    >
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 section-title">Contact Me</h2>
+
+        <div class="flex flex-col lg:flex-row items-center justify-between">
+          <div class="lg:w-1/2 mb-10 lg:mb-0">
+            <h3 class="text-2xl font-bold mb-6">Mari Berkolaborasi!</h3>
+            <p class="text-lg text-gray-700 mb-8">
+              Saya terbuka untuk peluang kerja sebagai Web Developer, baik
+              remote maupun onsite. Juga menerima proyek freelance untuk
+              pengembangan website dan sistem informasi.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <div class="bg-white p-3 rounded-lg shadow-sm mr-4">
+                  <i class="fas fa-envelope text-indigo-600"></i>
+                </div>
+                <div>
+                  <p class="font-medium">Email</p>
+                  <p class="text-gray-600">developer@example.com</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div class="bg-white p-3 rounded-lg shadow-sm mr-4">
+                  <i class="fas fa-phone text-indigo-600"></i>
+                </div>
+                <div>
+                  <p class="font-medium">Telepon</p>
+                  <p class="text-gray-600">+62 812 3456 7890</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div class="bg-white p-3 rounded-lg shadow-sm mr-4">
+                  <i class="fas fa-map-marker-alt text-indigo-600"></i>
+                </div>
+                <div>
+                  <p class="font-medium">Lokasi</p>
+                  <p class="text-gray-600">Indonesia (Remote Available)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:w-1/2 lg:pl-12">
+            <div class="bg-white p-8 rounded-xl shadow-md">
+              <h3 class="text-xl font-bold mb-6">Hubungi Saya</h3>
+              <p class="text-gray-600 mb-6">
+                Silakan hubungi saya melalui email atau telepon di atas. Saya
+                akan membalas dalam waktu 1x24 jam.
+              </p>
+
+              <div class="flex space-x-4 mb-6">
+                <a
+                  href="mailto:developer@example.com"
+                  class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-4 rounded-lg text-center transition duration-300"
+                >
+                  <i class="fas fa-envelope mr-2"></i> Email
+                </a>
+                <a
+                  href="https://wa.me/6281234567890"
+                  target="_blank"
+                  class="flex-1 bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-4 rounded-lg text-center transition duration-300"
+                >
+                  <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+                </a>
+              </div>
+
+              <p class="text-gray-500 text-sm">
+                *Portfolio ini dibuat dengan HTML, Tailwind CSS, dan JavaScript
+                murni tanpa backend.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <div class="text-2xl font-bold mb-2">Portfolio Web Developer</div>
+            <p class="text-gray-400">PHP • CodeIgniter • Laravel • MySQL</p>
+          </div>
+          <div class="flex space-x-6">
+            <a href="#" class="text-gray-400 hover:text-white">
+              <i class="fab fa-linkedin text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white">
+              <i class="fab fa-github text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white">
+              <i class="fab fa-instagram text-xl"></i>
+            </a>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>
+            &copy; 2023 Portfolio Web Developer. Dibuat dengan HTML, Tailwind
+            CSS, dan JavaScript.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-6 right-6 bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300 hidden"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+      // Mobile Menu Toggle
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when clicking a link
+      const mobileLinks = document.querySelectorAll("#mobileMenu a");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Back to Top Button
+      const backToTopBtn = document.getElementById("backToTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.remove("hidden");
+        } else {
+          backToTopBtn.classList.add("hidden");
+        }
+      });
+
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
